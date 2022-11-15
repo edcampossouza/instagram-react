@@ -7,7 +7,6 @@ export default function App({ data }) {
     <div className="pagina">
       <NavBar />
       <Corpo data={data} />
-      <Posts data={data} />
       <MobileFooter />
     </div>
   );

@@ -11,17 +11,17 @@ export default function Posts({ data }) {
 
 function Post({ post }) {
   return (
-    <div class="post">
-      <div class="topo-post">
-        <div class="perfil-resposta">
+    <div className="post">
+      <div className="topo-post">
+        <div className="perfil-resposta">
           <img src={post.profImg}/>
           {post.username}
         </div>
         <ion-icon name="ellipsis-horizontal"></ion-icon>
       </div>
-      <img class="img-post" src={post.postImg} />
-      <div class="rodape-post">
-        <div class="caixa-respostas">
+      <img className="img-post" src={post.postImg} />
+      <div className="rodape-post">
+        <div className="caixa-respostas">
           <div>
             <ion-icon name="heart-outline"></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
@@ -29,7 +29,7 @@ function Post({ post }) {
           </div>
           <ion-icon name="bookmark-outline"></ion-icon>
         </div>
-        <div class="curtidas">
+        <div className="curtidas">
           <img src={post.likedImg} />
           Curtido por&nbsp;<strong>{post.likedUsername}</strong>&nbsp;e&nbsp;
           <strong>outras {post.likes} pessoas</strong>

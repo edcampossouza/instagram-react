@@ -23,13 +23,13 @@ const data = {
       likedUsername: "respondeai",
     },
     {
-        profImg: "./assets/storie-3.png",
-        username: "barked",
-        postImg: "./assets/post-2.png",
-        likes: 99159,
-        likedImg: "./assets/adorableanimals.png",
-        likedUsername: "adorable_animals",
-      },
+      profImg: "./assets/storie-3.png",
+      username: "barked",
+      postImg: "./assets/post-2.png",
+      likes: 99159,
+      likedImg: "./assets/adorableanimals.png",
+      likedUsername: "adorable_animals",
+    },
     {
       profImg: "./assets/chibirdart 1.png",
       username: "chibirdart",
@@ -38,6 +38,18 @@ const data = {
       likedImg: "./assets/storie-1.png",
       likedUsername: "9gag",
     },
+  ],
+  user: {
+    username: "catanacomics",
+    realname: "Catana",
+    image: "./assets/catanacomics 1.png",
+  },
+  sugestions: [
+    { image: "./assets/badvibesmemes 1.png", username: "bad.vibes.memes" },
+    { image: "./assets/chibirdart 1.png", username: "chibirdart" },
+    { image: "./assets/razoesparaacreditar 1.png", username: "razoesparaacreditar" },
+    { image: "./assets/adorableanimals 1.png", username: "adorable_animals" },
+    { image: "./assets/smallcutecats 1.png", username: "smallcutecats" },
   ],
 };
 ReactDOM.render(<App data={data} />, root);
