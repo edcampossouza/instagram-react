@@ -14,6 +14,7 @@ export default function Posts({ data }) {
 function Post({ post }) {
   const [saved, setSaved] = useState(false);
   const [liked, setLiked] = useState(false);
+  const [likes, setLikes] = useState(post.likes);
   return (
     <div className="post">
       <div className="topo-post">
@@ -29,7 +30,16 @@ function Post({ post }) {
           <div>
             <span className={liked ? "red-icon" : null}>
               <ion-icon
-                onClick={() => setLiked((prevState) => !prevState)}
+                onClick={() =>
+                  setLiked((prevState) => {
+                    if (prevState) {
+                      setLikes((prev) => prev - 1);
+                    } else {
+                      setLikes((prev) => prev + 1);
+                    }
+                    return !prevState;
+                  })
+                }
                 name={liked ? "heart" : "heart-outline"}
               ></ion-icon>
             </span>
@@ -44,7 +54,9 @@ function Post({ post }) {
         <div className="curtidas">
           <img src={post.likedImg} />
           Curtido por&nbsp;<strong>{post.likedUsername}</strong>&nbsp;e&nbsp;
-          <strong>outras {post.likes} pessoas</strong>
+          <strong>
+            outras {likes.toLocaleString().replace(",", ".")} pessoas
+          </strong>
         </div>
       </div>
     </div>
