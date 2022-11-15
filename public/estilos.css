@@ -308,6 +308,13 @@ body {
   color: red;
 }
 
+.perfil-usuario img {
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+}
+
 @media screen and (max-width: 934px) {
   .sidebar {
     display: none;
