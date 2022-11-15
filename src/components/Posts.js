@@ -16,7 +16,7 @@ function Post({ post }) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(post.likes);
   return (
-    <div className="post">
+    <div className="post" data-test="post">
       <div className="topo-post">
         <div className="perfil-resposta">
           <img src={post.profImg} />
@@ -25,6 +25,7 @@ function Post({ post }) {
         <ion-icon name="ellipsis-horizontal"></ion-icon>
       </div>
       <img
+        data-test="post-image"
         onDoubleClick={() => {
           setLiked((prevState) => {
             if (!prevState) {
@@ -53,6 +54,7 @@ function Post({ post }) {
                   })
                 }
                 name={liked ? "heart" : "heart-outline"}
+                data-test="like-post"
               ></ion-icon>
             </span>
             <ion-icon name="chatbubble-outline"></ion-icon>
@@ -61,13 +63,14 @@ function Post({ post }) {
           <ion-icon
             onClick={() => setSaved((prevState) => !prevState)}
             name={saved ? "bookmark" : "bookmark-outline"}
+            data-test="save-post"
           ></ion-icon>
         </div>
         <div className="curtidas">
           <img src={post.likedImg} />
           Curtido por&nbsp;<strong>{post.likedUsername}</strong>&nbsp;e&nbsp;
           <strong>
-            outras {likes.toLocaleString().replace(",", ".")} pessoas
+            outras <span data-test="likes-number">{likes.toLocaleString().replace(",", ".")}</span> pessoas
           </strong>
         </div>
       </div>

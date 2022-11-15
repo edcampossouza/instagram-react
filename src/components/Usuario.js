@@ -16,13 +16,21 @@ export default function Usuario({ user }) {
     } else setImgLink(newLink);
   }
   return (
-    <div className="perfil-usuario">
-      <img onClick={changeImgLink} src={imgLink} />
+    <div className="perfil-usuario" data-test="user">
+      <img onClick={changeImgLink} data-test="profile-image" src={imgLink} />
       <div>
         <div className="nomeperfil">{user.username}</div>
-        <div className="nomereal">
-          {realname}{" "}
-          <ion-icon onClick={changeRealName} name="pencil-outline"></ion-icon>
+        <div>
+          <span className="nomereal" data-test="name">
+            {realname}
+          </span>
+          <span className="editname">
+            <ion-icon
+              onClick={changeRealName}
+              name="pencil-outline"
+              data-test="edit-name"
+            ></ion-icon>
+          </span>
         </div>
       </div>
     </div>
