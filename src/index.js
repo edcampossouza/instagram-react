@@ -13,5 +13,31 @@ const data = {
     { image: "./assets/storie-7.png", username: "fillomoderna" },
     { image: "./assets/storie-8.png", username: "meme" },
   ],
+  posts: [
+    {
+      profImg: "./assets/storie-2.png",
+      username: "meowed",
+      postImg: "./assets/post-1.png",
+      likes: 101523,
+      likedImg: "./assets/storie-6.png",
+      likedUsername: "respondeai",
+    },
+    {
+        profImg: "./assets/storie-3.png",
+        username: "barked",
+        postImg: "./assets/post-2.png",
+        likes: 99159,
+        likedImg: "./assets/adorableanimals.png",
+        likedUsername: "adorable_animals",
+      },
+    {
+      profImg: "./assets/chibirdart 1.png",
+      username: "chibirdart",
+      postImg: "./assets/chick.jpg",
+      likes: 123456,
+      likedImg: "./assets/storie-1.png",
+      likedUsername: "9gag",
+    },
+  ],
 };
 ReactDOM.render(<App data={data} />, root);
