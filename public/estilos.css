@@ -304,6 +304,10 @@ body {
   z-index: 3;
 }
 
+.red-icon ion-icon {
+  color: red;
+}
+
 @media screen and (max-width: 934px) {
   .sidebar {
     display: none;
