@@ -24,7 +24,19 @@ function Post({ post }) {
         </div>
         <ion-icon name="ellipsis-horizontal"></ion-icon>
       </div>
-      <img className="img-post" src={post.postImg} />
+      <img
+        onDoubleClick={() => {
+          setLiked((prevState) => {
+            if (!prevState) {
+              setLikes((cnt) => cnt + 1);
+              prevState = !prevState;
+            }
+            return prevState;
+          });
+        }}
+        className="img-post"
+        src={post.postImg}
+      />
       <div className="rodape-post">
         <div className="caixa-respostas">
           <div>
