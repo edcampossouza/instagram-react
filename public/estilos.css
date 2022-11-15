@@ -151,6 +151,10 @@ body {
   font-size: 14px;
   color: #8e8e8e;
 }
+
+.nomereal ion-icon:hover {
+  cursor: pointer;
+}
 .sugestao .nomeperfil {
   margin-bottom: 6px;
 }
