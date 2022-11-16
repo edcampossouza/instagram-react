@@ -5,6 +5,7 @@ export default function Stories({ data }) {
       {stories.map((story) => (
         <Story key={story.image} story={story} />
       ))}
+      <ion-icon class="seta-direita" name="chevron-forward-outline"></ion-icon>
     </div>
   );
 }
