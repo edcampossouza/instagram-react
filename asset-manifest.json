@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/instagram-react/static/js/main.b19497d0.js",
-    "index.html": "/instagram-react/index.html",
-    "main.b19497d0.js.map": "/instagram-react/static/js/main.b19497d0.js.map"
+    "main.js": "./static/js/main.b19497d0.js",
+    "index.html": "./index.html",
+    "main.b19497d0.js.map": "./static/js/main.b19497d0.js.map"
   },
   "entrypoints": [
     "static/js/main.b19497d0.js"
