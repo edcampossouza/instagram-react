@@ -308,6 +308,29 @@ body {
   color: red;
 }
 
+.post-img-container {
+  position: relative;
+}
+
+.post-heart {
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+}
+
+.post-heart ion-icon {
+  color: white;
+  scale: 0.2;
+  visibility: hidden;
+  font-size: 200px;
+}
+
+.post-heart.icon-show ion-icon {
+  scale: 1;
+  visibility: visible;
+  transition: scale 300ms linear;
+}
+
 .perfil-usuario img {
   cursor: pointer;
   width: 56px;

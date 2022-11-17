@@ -15,6 +15,7 @@ function Post({ post }) {
   const [saved, setSaved] = useState(false);
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(post.likes);
+  const [showHeart, setShowHeart] = useState(false);
   return (
     <div className="post" data-test="post">
       <div className="topo-post">
@@ -24,20 +25,29 @@ function Post({ post }) {
         </div>
         <ion-icon name="ellipsis-horizontal"></ion-icon>
       </div>
-      <img
-        data-test="post-image"
-        onDoubleClick={() => {
-          setLiked((prevState) => {
-            if (!prevState) {
-              setLikes((cnt) => cnt + 1);
-              prevState = !prevState;
-            }
-            return prevState;
-          });
-        }}
-        className="img-post"
-        src={post.postImg}
-      />
+      <div className="post-img-container">
+        <img
+          data-test="post-image"
+          onDoubleClick={() => {
+            setLiked((prevState) => {
+              if (!prevState) {
+                setLikes((cnt) => cnt + 1);
+                setShowHeart(true);
+                setTimeout(() => {
+                  setShowHeart(false);
+                }, 500);
+                prevState = !prevState;
+              }
+              return prevState;
+            });
+          }}
+          className="img-post"
+          src={post.postImg}
+        />
+        <div className={`post-heart ${showHeart ? "icon-show" : null}`}>
+          <ion-icon name="heart"></ion-icon>
+        </div>
+      </div>
       <div className="rodape-post">
         <div className="caixa-respostas">
           <div>
@@ -70,7 +80,11 @@ function Post({ post }) {
           <img src={post.likedImg} />
           Curtido por&nbsp;<strong>{post.likedUsername}</strong>&nbsp;e&nbsp;
           <strong>
-            outras <span data-test="likes-number">{likes.toLocaleString().replace(",", ".")}</span> pessoas
+            outras{" "}
+            <span data-test="likes-number">
+              {likes.toLocaleString().replace(",", ".")}
+            </span>{" "}
+            pessoas
           </strong>
         </div>
       </div>
