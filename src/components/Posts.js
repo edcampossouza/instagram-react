@@ -28,7 +28,7 @@ function Post({ post }) {
       <div className="post-img-container">
         <img
           data-test="post-image"
-          onDoubleClick={() => {
+          onClick={() => {
             setLiked((prevState) => {
               if (!prevState) {
                 setLikes((cnt) => cnt + 1);
@@ -44,9 +44,6 @@ function Post({ post }) {
           className="img-post"
           src={post.postImg}
         />
-        <div className={`post-heart ${showHeart ? "icon-show" : null}`}>
-          <ion-icon name="heart"></ion-icon>
-        </div>
       </div>
       <div className="rodape-post">
         <div className="caixa-respostas">
