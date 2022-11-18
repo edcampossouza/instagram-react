@@ -15,7 +15,6 @@ function Post({ post }) {
   const [saved, setSaved] = useState(false);
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(post.likes);
-  const [showHeart, setShowHeart] = useState(false);
   return (
     <div className="post" data-test="post">
       <div className="topo-post">
@@ -32,10 +31,6 @@ function Post({ post }) {
             setLiked((prevState) => {
               if (!prevState) {
                 setLikes((cnt) => cnt + 1);
-                setShowHeart(true);
-                setTimeout(() => {
-                  setShowHeart(false);
-                }, 500);
                 prevState = !prevState;
               }
               return prevState;
